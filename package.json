@@ -1,0 +1,24 @@
+{
+  "name": "cy-testtablesorting",
+  "version": "1.0.0",
+  "description": "example of table sorting by header column in ascending and descending order",
+  "main": "index.js",
+  "scripts": {
+    "test": "cypress run",
+    "test:db": "cypress run --record --key 88b20db3-c65a-411b-b7b1-b1e7753ac835",
+    "report:merge": "mochawesome-merge cypress/results/json/*.json > index.json",
+    "report:gen": "marge index.json --reportDir public --assetsDir public/assets --reportPageTitle index.html",
+    "delete:json": "del-cli cypress/results/json/*",
+    "delete:report": "del-cli public/*"
+  },
+  "keywords": [],
+  "author": "jean",
+  "license": "ISC",
+  "devDependencies": {
+    "cypress": "^10.9.0",
+    "cypress-multi-reporters": "^1.6.1",
+    "del-cli": "^5.0.0",
+    "mochawesome": "^7.1.3",
+    "mochawesome-merge": "^4.2.1"
+  }
+}
