@@ -52,6 +52,6 @@ describe('Test Suite - Table Sorting', () => {
         cy.funcTestSorting('Number(Salary.textContent.slice(1).replace(",",""))')
         /**sort by Salary column in descending order */
         table.thStartDate.click()
-        cy.funcTestSorting('Number(Salary.textContent.slice(1).replace(",",""))', 'desc')
+        cy.funcTestSorting('Number(Salary.textContent.slice(1).replaceAll(",",""))', 'desc')
     })
 })
