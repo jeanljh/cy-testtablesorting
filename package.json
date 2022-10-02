@@ -1,7 +1,7 @@
 {
   "name": "cy-testtablesorting",
   "version": "1.0.0",
-  "description": "example of table sorting by header column in ascending and descending order",
+  "description": "example of testing table sorting by header column in ascending and descending order",
   "main": "index.js",
   "scripts": {
     "test": "cypress run",
@@ -11,7 +11,10 @@
     "delete:json": "del-cli cypress/results/json/*",
     "delete:report": "del-cli public/*"
   },
-  "keywords": [],
+  "keywords": [
+    "cypress",
+    "table sorting"
+  ],
   "author": "jean",
   "license": "ISC",
   "devDependencies": {
