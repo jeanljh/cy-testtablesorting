@@ -29,16 +29,18 @@ import table from '../pages/table.cy'
 const { _ } = Cypress
 
 Cypress.Commands.add('funcTestSorting', (sortValue, sortOrder) => {
-    const getHeaderText = $header => _.map($header, 'textContent')
-    table.tableHeaders.then(getHeaderText).then(headers => {
-        const getTableValues = rows => {
+    table.tableHeaders
+    .then($header => _.map($header, 'textContent'))
+    .then(headers => {
+        table.tableRows
+        .then(rows => {
             return _.map(rows, r => {
                 return _.chain(r.cells)
                 .keyBy(cell => headers[cell.cellIndex])
                 .value()
             })
-        }
-        table.tableRows.then(getTableValues).then(tableValues => {
+        })
+        .then(tableValues => {
             expect(tableValues).to.deep.eq(_.orderBy(tableValues, sortValue, sortOrder))
         })
     })
